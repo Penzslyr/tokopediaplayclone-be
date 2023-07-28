@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "64c298a3b9324735fa213bdf"
+  },
+  "VideoId": {
+    "$oid": "64c2a6a9b9324735fa213beb"
+  },
+  "LinkProduct": "https://example.com/products/product001",
+  "Title": "Product 1",
+  "Price": 2999
+},
+{
+  "_id": {
+    "$oid": "64c298a3b9324735fa213be0"
+  },
+  "VideoId": {
+    "$oid": "64c2acfb7acff8bf69cb9708"
+  },
+  "LinkProduct": "https://example.com/products/product002",
+  "Title": "Product 2",
+  "Price": 1999
+},
+{
+  "_id": {
+    "$oid": "64c298a3b9324735fa213be1"
+  },
+  "VideoId": {
+    "$oid": "64c2ad78cf947fc12d92cbe2"
+  },
+  "LinkProduct": "https://example.com/products/product003",
+  "Title": "Product 3",
+  "Price": 3999
+}]

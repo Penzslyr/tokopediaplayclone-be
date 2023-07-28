@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "64c2a506b9324735fa213be5"
+  },
+  "username": "john_doe",
+  "comment": "Great video!",
+  "timestamp": {
+    "$date": "2023-07-27T12:34:00.000Z"
+  },
+  "VideoId": {
+    "$oid": "64c2a6a9b9324735fa213beb"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c2a506b9324735fa213be6"
+  },
+  "username": "jane_smith",
+  "comment": "Nice work!",
+  "timestamp": {
+    "$date": "2023-07-27T14:15:00.000Z"
+  },
+  "VideoId": {
+    "$oid": "64c2a6a9b9324735fa213beb"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c2a506b9324735fa213be7"
+  },
+  "username": "user123",
+  "comment": "Awesome content!",
+  "timestamp": {
+    "$date": "2023-07-27T18:22:00.000Z"
+  },
+  "VideoId": {
+    "$oid": "64c2a6a9b9324735fa213beb"
+  }
+},
+{
+  "_id": {
+    "$oid": "64c30f70fad5909aa4894ed6"
+  },
+  "username": "Video test 2",
+  "comment": "www.google.com",
+  "timestamp": {
+    "$date": "2023-07-28T00:44:32.902Z"
+  },
+  "VideoId": {
+    "$oid": "64c2a6a9b9324735fa213beb"
+  },
+  "__v": 0
+}]

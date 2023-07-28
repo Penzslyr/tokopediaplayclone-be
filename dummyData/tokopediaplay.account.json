@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "64c2a41ab9324735fa213be2"
+  },
+  "username": "john_doe",
+  "password": "secure_password_1",
+  "urlPhotoProfile": "https://example.com/profiles/john_doe.jpg"
+},
+{
+  "_id": {
+    "$oid": "64c2a41ab9324735fa213be3"
+  },
+  "username": "jane_smith",
+  "password": "secure_password_2",
+  "urlPhotoProfile": "https://example.com/profiles/jane_smith.jpg"
+},
+{
+  "_id": {
+    "$oid": "64c2a41ab9324735fa213be4"
+  },
+  "username": "user123",
+  "password": "secure_password_3",
+  "urlPhotoProfile": "https://example.com/profiles/user123.jpg"
+}]
