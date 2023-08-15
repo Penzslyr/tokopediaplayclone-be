@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 const VideoList = require('../models/video.js');
 const ProductList = require('../models/product.js');
-const CommentList = require('../models/comment')
+const CommentList = require('../models/comment');
+const accountList = require('../models/account.js');
 
+
+
+var cors = require('cors');
 
 router.get('/getVideoAll', async (req, res) => {
   try {
@@ -70,37 +75,60 @@ router.post('/postVideo', (req, res) => {
 });
 
 router.get('/comments/:videoId', async (req, res) => {
-    try {
-      const videoId = req.params.videoId;
-  
-      const comment = await CommentList.find({ VideoId: videoId });
-  
-      if (!comment || comment.length === 0) {
-        return res
-          .status(404)
-          .json({ error: 'comment list not found for the specified Video ID' });
-      }
-  
-      res.json(comment);
-    } catch (err) {
-      res.status(500).json({ error: 'Error fetching comment list' });
+  try {
+    const videoId = req.params.videoId;
+
+    const comment = await CommentList.find({ VideoId: videoId });
+
+    if (!comment || comment.length === 0) {
+      return res
+        .status(404)
+        .json({ error: 'comment list not found for the specified Video ID' });
     }
+
+    res.json(comment);
+  } catch (err) {
+    res.status(500).json({ error: 'Error fetching comment list' });
+  }
+});
+
+router.post('/comments', (req, res) => {
+  const comment = new CommentList({
+    username: req.body.username,
+    comment: req.body.comment,
+    timestamp: new Date(),
+    VideoId: req.body.VideoId,
   });
 
-  router.post("/comments", (req, res)=>{
-    const comment = new CommentList({
-        username: req.body.username,
-        comment: req.body.comment,
-        timestamp: new Date(), 
-        VideoId: req.body.VideoId
-      });
-    
-      try {
-        const commentToSave = comment.save();
-        res.status(200).json({ message: 'comment added to the video' });
-      } catch (error) {
-        res.status(400).json({ message: error.message });
-      }
-  })
+  try {
+    const commentToSave = comment.save();
+    res.status(200).json({ message: 'comment added to the video' });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+// login function
+router.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const account = await accountList.findOne({ username });
+
+    if (!account) {
+      return res.status(401).json({ message: 'Authentication failed' });
+    }
+
+    const passwordMatch = await (password === account.password);
+
+    if (passwordMatch) {
+      return res.json({ message: 'Login successful', account });
+    } else {
+      return res.status(401).json({ message: 'Authentication failed' });
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 module.exports = router;
