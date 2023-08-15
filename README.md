@@ -48,3 +48,9 @@ in node/express js , run following command
 to test please read this postman api documentation
 - https://documenter.getpostman.com/view/23780866/2s9XxsUvj9
 
+## Demo
+Please change the url from localhost:3000 to https://tokopediaplayclone-be.vercel.app/
+
+example: 
+https://tokopediaplayclone-be.vercel.app/api/getVideoAll
+
