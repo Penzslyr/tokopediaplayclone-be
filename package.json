@@ -4,7 +4,8 @@
   "description": "api backend product ",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "vercel-build": "echo hello"
   },
   "author": "fendi",
   "license": "MIT",
